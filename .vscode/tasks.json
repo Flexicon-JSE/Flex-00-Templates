@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Export Styled HTML",
+            "type": "shell",
+            "command": "markdown-it ${file} --css Flexicon HTML CSS.css -o ${fileDirname}/${fileBasenameNoExtension}.html",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
