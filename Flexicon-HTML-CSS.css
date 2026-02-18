@@ -55,14 +55,15 @@ h3 {
     margin-top: 20px;
 }
 
-/* Lists and Spacing */
+/* Lists and Spacing - Tightened for professional lists */
 ul, ol { 
-    margin: 10px 0; 
-    padding-left: 20px; 
+    margin: 8px 0; 
+    padding-left: 25px; 
 }
 
 li {
-    margin-bottom: 5px;
+    margin-bottom: 2px; /* Reduced from 5px for a tighter feel */
+    line-height: 1.35;   /* Tighter line spacing than the body text */
 }
 
 /* Emphasis and Specialized Text */
