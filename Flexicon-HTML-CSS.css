@@ -103,7 +103,7 @@ blockquote {
     margin: 20px 0 !important;
     padding: 15px 20px !important; /* This 15px will now be perfectly even */
     
-    border-left: 6px solid #004990 !important; /* Flexicon Blue accent bar */
+    border-left: 6px solid #ed174f !important; /* Flexicon Blue accent bar */
     border-radius: 4px;
     display: block; /* Ensures the container behaves as a full block */
 }
