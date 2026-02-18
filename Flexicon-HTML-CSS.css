@@ -89,13 +89,19 @@ strong {
 }
 
 /* Mapping .note class to blockquotes for Markdown ease-of-use */
+/* Mapping .note class to blockquotes for professional callouts */
 blockquote {
     font-style: italic !important;
-    color: #555 !important;
+    color: #333 !important; /* Slightly darker for better legibility on peach */
     background-color: #fbe9e7 !important; /* Flexicon Light Red/Peach */
-    margin: 10px 0 !important;
-    border-left: 5px solid #ed174f !important; /* Added a subtle red bar to match branding */
-    padding: 10px 15px !important;
+    
+    /* Centering and Spacing */
+    margin: 20px 0 !important;
+    padding: 15px 20px !important; /* Balanced padding centers the text */
+    
+    /* Branding Accents */
+    border-left: 6px solid #004990 !important; /* Flexicon Blue accent bar */
+    border-radius: 4px; /* Slightly rounded corners */
 }
 
 /* Horizontal Rule to match body-line */
