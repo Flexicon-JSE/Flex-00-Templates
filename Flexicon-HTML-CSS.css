@@ -125,3 +125,27 @@ hr {
     background-color: #004990; 
     margin: 16px 0 20px 0;
 }
+
+/* Status Badges */
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 0.75em;
+    font-weight: 900;
+    font-family: Inter, sans-serif;
+    text-transform: uppercase;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* Specific Status Colors */
+.draft {
+    background-color: #fff200; /* Flexicon Yellow */
+    color: #333;
+}
+
+.approved {
+    background-color: #004990; /* Flexicon Blue */
+    color: #fff;
+}
