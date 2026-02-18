@@ -11,6 +11,7 @@ body {
 }
 
 /* Flexicon Branding Header */
+/* 1. Thicker Yellow Line in Branding Header */
 body::before {
     content: "Flexicon";
     display: block;
@@ -21,7 +22,7 @@ body::before {
     text-align: center;
     text-transform: capitalize;
     margin-bottom: 20px;
-    border-top: 5px solid #fff200; /* Yellow top-line */
+    border-top: 10px solid #fff200; /* Increased to 10px for thickness */
     padding-top: 10px;
 }
 
@@ -33,17 +34,20 @@ h1, h2, h3 {
 h1 { 
     font-family: Inter; 
     font-weight: 900; 
-    border-bottom: 2px solid #004990; 
-    padding-bottom: 5px;
+    color: #004990; 
+    border-bottom: 2px solid #004990; /* Exact Flexicon Blue */
+    padding-bottom: 10px; /* Slight increase to match visual weight */
     text-align: center; 
 }
 
 h2 { 
     font-family: Inter; 
     font-weight: 700; 
+    color: #004990;
     border-bottom: 2px solid #004990; 
-    padding-bottom: 5px; 
-    margin-top: 40px;
+    padding-bottom: 20px; /* Increased to 20px to center text */
+    margin-top: 20px;    /* Decreased to 20px to balance space from <hr> */
+    margin-bottom: 20px;
 }
 
 h3 {
