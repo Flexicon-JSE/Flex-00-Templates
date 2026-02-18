@@ -1,7 +1,7 @@
 /* Flexicon Style Template for Markdown Export */
 
 /* Imports for Inter, Lato, and News Cycle */
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Lato&family=News+Cycle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Lato:wght@400;700;900&family=News+Cycle:wght@400;700;900&display=swap');
 
 body { 
     font-family: Inter, 'News Cycle', Helvetica, sans-serif; 
@@ -68,11 +68,12 @@ strong {
 
 /* Mapping .note class to blockquotes for Markdown ease-of-use */
 blockquote {
-    font-style: italic;
-    color: #555;
-    margin: 10px 0;
-    border-left: none; /* Removing default blockquote border */
-    padding-left: 0;
+    font-style: italic !important;
+    color: #555 !important;
+    background-color: #fbe9e7 !important; /* Flexicon Light Red/Peach */
+    margin: 10px 0 !important;
+    border-left: 5px solid #ed174f !important; /* Added a subtle red bar to match branding */
+    padding: 10px 15px !important;
 }
 
 /* Horizontal Rule to match body-line */
