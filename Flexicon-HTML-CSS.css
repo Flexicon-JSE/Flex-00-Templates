@@ -60,6 +60,7 @@ h3 {
 /* Lists and Spacing - Forced upward to "attach" to text above */
 /* 1st Level: Solid Dot + Tight Spacing */
 ul, ol { 
+    list-style-type: disc !important; /* Solid dot for 1st level */
     margin-top: -5px !important; /* Pulls list up to the preceding text */
     margin-bottom: 10px; 
     padding-left: 25px; 
@@ -73,9 +74,10 @@ li {
 
 /* 2nd Level: Hollow Dot + Indentation */
 ul ul, ol ul, ul ol, ol ol {
+    list-style-type: circle !important; /* This forces the hollow dot */
     margin-top: 2px !important; /* Normal spacing for nested items */
     margin-bottom: 2px;
-    list-style-type: circle; /* Hollow dot */
+    padding-left: 25px; /* Additional indentation for nested lists */
 }
 
 /* Optional: If you use H3 or Bold text to start a list, this ensures it stays tight */
@@ -96,12 +98,21 @@ blockquote {
     background-color: #fbe9e7 !important; /* Flexicon Light Red/Peach */
     
     /* Centering and Spacing */
+   /* Symmetrical Vertical Spacing */
     margin: 20px 0 !important;
-    padding: 15px 20px !important; /* Balanced padding centers the text */
+    padding: 15px 20px !important; /* This 15px will now be perfectly even */
     
-    /* Branding Accents */
     border-left: 6px solid #004990 !important; /* Flexicon Blue accent bar */
-    border-radius: 4px; /* Slightly rounded corners */
+    border-radius: 4px;
+    display: block; /* Ensures the container behaves as a full block */
+}
+
+/* ZERO out internal paragraph margins to fix Vertical Centering */
+blockquote p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    line-height: 1.6 !important;
 }
 
 /* Horizontal Rule to match body-line */
