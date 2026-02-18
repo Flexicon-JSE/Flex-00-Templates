@@ -73,9 +73,10 @@ li {
 }
 
 /* 2nd Level: Hollow Dot + Indentation */
-ul ul, ol ul, ul ol, ol ol {
+ul > li > ul > li, 
+ul > ul > li{
     list-style-type: circle !important; /* This forces the hollow dot */
-    margin-top: 2px !important; /* Normal spacing for nested items */
+    margin-top: 4px !important; /* Normal spacing for nested items */
     margin-bottom: 2px;
     padding-left: 25px; /* Additional indentation for nested lists */
 }
