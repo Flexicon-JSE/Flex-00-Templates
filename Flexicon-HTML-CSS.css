@@ -56,14 +56,16 @@ h3 {
 }
 
 /* Lists and Spacing - Tightened for professional lists */
+/* Lists and Spacing - Positioned closer to preceding text */
 ul, ol { 
-    margin: 8px 0; 
+    margin-top: 2px;    /* Reduced from 8px to pull closer to the header text */
+    margin-bottom: 8px; 
     padding-left: 25px; 
 }
 
 li {
-    margin-bottom: 2px; /* Reduced from 5px for a tighter feel */
-    line-height: 1.35;   /* Tighter line spacing than the body text */
+    margin-bottom: 2px;
+    line-height: 1.35;
 }
 
 /* Emphasis and Specialized Text */
