@@ -33,7 +33,7 @@ h1, h2, h3 {
 
 h1 { 
     font-family: Inter; 
-    font-weight: 900; 
+    font-weight: 700; 
     color: #004990; 
     border-bottom: 2px solid #004990 !important; /* Exact Flexicon Blue */
     padding-bottom: 10px; /* Slight increase to match visual weight */
