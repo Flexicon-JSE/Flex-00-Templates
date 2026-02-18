@@ -149,3 +149,9 @@ hr {
     background-color: #004990; /* Flexicon Blue */
     color: #fff;
 }
+
+.confidential {
+    background-color: #ed174f; /* Flexicon Red */
+    color: #fff;
+    border: 1px solid #333; /* Adding a dark border for extra emphasis */
+}
