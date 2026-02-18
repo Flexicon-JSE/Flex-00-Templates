@@ -59,26 +59,28 @@ h3 {
 /* Lists and Spacing - Positioned closer to preceding text */
 /* Lists and Spacing - Forced upward to "attach" to text above */
 /* 1st Level: Solid Dot + Tight Spacing */
-ul, ol { 
-    list-style-type: disc !important; /* Solid dot for 1st level */
-    margin-top: -5px !important; /* Pulls list up to the preceding text */
+/* 1st Level Bullets */
+ul {
+    margin-top: -5px !important; 
     margin-bottom: 10px; 
-    padding-left: 25px; 
+    padding-left: 20px !important; /* Standardized indent */
 }
 
-li {
-    margin-bottom: 2px;
-    line-height: 1.35;
-    list-style-type: disc; /* Solid dot */
+ul li {
+    list-style-type: disc !important;
+    padding-left: 5px !important; /* Uniform gap between dot and text */
 }
 
-/* 2nd Level: Hollow Dot + Indentation */
-ul > li > ul > li, 
-ul > ul > li{
-    list-style-type: circle !important; /* This forces the hollow dot */
-    margin-top: 4px !important; /* Normal spacing for nested items */
-    margin-bottom: 2px;
-    padding-left: 25px; /* Additional indentation for nested lists */
+/* 2nd Level: Hollow Dot Alignment */
+ul ul {
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+    padding-left: 20px !important; /* Matching the 1st level's indent */
+}
+
+ul ul li {
+    list-style-type: circle !important;
+    padding-left: 5px !important; /* Force matching gap for hollow dots */
 }
 
 /* Optional: If you use H3 or Bold text to start a list, this ensures it stays tight */
