@@ -58,15 +58,24 @@ h3 {
 /* Lists and Spacing - Tightened for professional lists */
 /* Lists and Spacing - Positioned closer to preceding text */
 /* Lists and Spacing - Forced upward to "attach" to text above */
+/* 1st Level: Solid Dot + Tight Spacing */
 ul, ol { 
-    margin-top: -12px !important; /* Negative margin pulls the list UP */
-    margin-bottom: 8px; 
+    margin-top: -5px !important; /* Pulls list up to the preceding text */
+    margin-bottom: 10px; 
     padding-left: 25px; 
 }
 
 li {
     margin-bottom: 2px;
     line-height: 1.35;
+    list-style-type: disc; /* Solid dot */
+}
+
+/* 2nd Level: Hollow Dot + Indentation */
+ul ul, ol ul, ul ol, ol ol {
+    margin-top: 2px !important; /* Normal spacing for nested items */
+    margin-bottom: 2px;
+    list-style-type: circle; /* Hollow dot */
 }
 
 /* Optional: If you use H3 or Bold text to start a list, this ensures it stays tight */
