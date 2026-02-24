@@ -368,7 +368,8 @@ aside > *:last-child {
   background-color: #fafbfc;
 }
 </style>
-            
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
 <style>
@@ -507,12 +508,59 @@ Auto-hiding controls: appear on mouse move, disappear after 3 seconds of inactiv
 Bottom navigation bar with: left=slide counter (&quot;1/5&quot; style, white/50 opacity, 13px, tabular-nums), center=progress dots (6px circles, current slide dot expands to 24px wide pill, white/90 for active, white/30 for inactive), right = prev/next chevron buttons + divider + fullscreen toggle button (all white/50, hover to white/90 with white/10 background)
 Top-right keyboard int text (&quot;⬅️ ➡️ Navigate | F Fullscreen&quot;) at 11px, white/40, fades with controls
 Video Backgrounds: Every slide that uses a video background should implement it identically: use hls.js - if Hls.isSupported(), create an HLS instance with enableWorker: true, load the source, attach to a <video> element, and auto-play on MANIFEST_PARSED. Fallback for Safari native HLS. The <video> element is absolute inset-0 w-full h-full object-cover, autoPlay, loop, muted, playsInline. No overlay, no dimming, 100% opacity. Content sits on top via relative z-10.</p>
-<p>Slide 1 - Cover Slide (CoverSlide.tsk):
-Video background:
-Header: logo (white SVG, 129x40px) on the left, &quot;Pitch Deck&quot; text on the right (clamp 12 px-20px, opacity-80)
-Center content ()</p>
+<p>Slide 1 — Cover Slide (CoverSlide.tsx):</p>
+<p>Video background: <a href="https://stream.mux.com/JNJEOYI6B3EffB">https://stream.mux.com/JNJEOYI6B3EffB</a>
+9f5ZhpGbuxzc6gSyJcXaCBbCgZKRg.m3u8</p>
+<p>Header: logo (white SVG, 129×40px) on the left, &quot;Pitch Deck&quot; text on the right (clamp 12px–20px, opacity-80)
+Center content (vertically centered, nudged up 3%): title &quot;AI-Powered Data Analytics&quot; (clamp 32px–96px, tracking -0.02em, line-height 1.05), subtitle &quot;Unlocking Business Potential&quot; (clamp 20px–48px, opacity-90, mt 1.5%), author &quot;By John Doe&quot; (clamp 14px–24px, opacity-75, mt 2%)
+Footer: &quot;2024&quot; centered (clamp 12px–20px, opacity-60)
+Slide 2 — Intro Slide (IntroSlide.tsx):</p>
+<p>Video background: <a href="https://stream.mux.com/Kec29dVyJgiPdt">https://stream.mux.com/Kec29dVyJgiPdt</a>
+WaQtPuEiiGHkJIYQAVUJcNiIHUYeo.m3u8</p>
+<p>Header: logo left, &quot;Pitch Deck&quot; center, &quot;Page 001&quot; right (all clamp 12px–20px, opacity-80)
+Title: &quot;The Rise of AI / in Data Analytics&quot; (clamp 28px–64px, tracking -0.02em, line-height 1.05)
+Three-column layout below title (mt 3.5%, gap 4%):Column 1 (flex 0 0 22%): paragraph about AI analytics market growth ($150B to $300B), then large &quot;$300&quot; stat (clamp 28px–64px) with &quot;2027&quot; label beside it (clamp 13px–20px, white/80)
+Column 2 (flex 0 0 38%): long paragraph about businesses adopting AI-driven analysis (clamp 13px–20px, opacity-90, line-height 1.5)
+Column 3 (flex 0 0 20%): &quot;25–40%&quot; large stat (clamp 28px–64px), description text below, and a mini SVG line graph at bottom with a curved line (white stroke), a gradient fill area (#D2FF55 to transparent), and two endpoint dots (#B750B2 fill, white stroke)</p>
+<p>Footer: &quot;The Rise of AI&quot; right-aligned (clamp 12px–20px, opacity-60)
+Slide 3 — Analytics Slide (AnalyticsSlide.tsx):
+Video background: <a href="https://stream.mux.com/fHfa8VIbBdqZel">https://stream.mux.com/fHfa8VIbBdqZel</a>
+LGg5thjsypZ101M01dbyIMLNDWQwlLA.m3u8</p>
+<p>Header: logo left, &quot;Pitch Deck&quot; center, &quot;Page 002&quot; right
+Centered title section: &quot;Transforming Data into Intelligence with&quot; (clamp 14px–24px, opacity-90) above &quot;AI-Powered Analytics&quot; (clamp 28px–64px)</p>
+<p>Card grid below (px 5.2%, flexible height):Top row: 3 equal liquid glass cards with gap clamp(10px–27px)
+Bottom row: 2 equal liquid glass cards with gap clamp(10px–25px)
+Each card has: an icon (white stroke SVG, clamp 32px–48px), title (clamp 18px–36px), description (clamp 12px–20px, white/80). Content aligned to bottom of card with padding clamp(20px–48px)
+Card 1: Monitor icon, &quot;Advanced Capabilities&quot;, &quot;Real-time processing, predictive analytics, and machine learning.&quot;
+Card 2: Brain icon, &quot;Smarter Decision-Making&quot;, &quot;Helping businesses unlock insights and optimize efficiency.&quot;
+Card 3: Briefcase/Tie icon, &quot;Industry Leader&quot;, &quot;Driving AI-driven data analytics innovation.&quot;
+Card 4: Lightbulb icon, &quot;Future-Ready Solutions&quot;, &quot;Empowering organizations to stay competitive in a data-driven world.&quot;
+Card 5: Shield icon, &quot;Scalable &amp; Secure&quot;, &quot;Ensuring seamless AI integration with robust data protection.&quot;</p>
+<p>Use lucide-react icons (Monitor, Brain, Briefcase, Lightbulb, Shield) as white stroke SVGs
+Slide 4 — Quote Slide (QuoteSlide.tsx):
+Video background: <a href="https://stream.mux.com/4IMYGcL01xjs7e">https://stream.mux.com/4IMYGcL01xjs7e</a>
+k5ANO17JC4VQVUTsojZlnw4fXzwSxc.m3u8</p>
+<p>Centered content only, no header/footer
+Attribution: &quot;Andrew Ng&quot; (clamp 14px–20px, opacity-90)
+Quote: &quot;Artificial Intelligence is the new electricity.&quot; in smart quotes (clamp 28px–64px, tracking -0.02em, line-height 1.15)
+Max-width 70%, gap 12px between attribution and quote
+Slide 5 — Outro/Contact Slide (OutroSlide.tsx):
+Video background: <a href="https://stream.mux.com/00qQnfNo7sSpn3">https://stream.mux.com/00qQnfNo7sSpn3</a>
+pB1hYKkyeSDvxs01NxiQ3sr29uL3e028.m3u8</p>
+<p>Header: logo left, &quot;Pitch Deck&quot; center, &quot;Page 020&quot; right
+Main content vertically centered, left-aligned:Title: &quot;Contact Information &amp; / Final Call to Action&quot; (clamp 28px–64px, tracking -0.02em, line-height 1.05)
+Description paragraph (clamp 13px–20px, opacity-90, max-width 38%, mt 3%)</p>
+<p>5 contact items stacked vertically (gap clamp 12px–19px, mt 3%), each with an icon (clamp 24px–32px) and text (clamp 13px–20px):Instagram icon → &quot;<a href="http://Instagram.com/grapho">http://Instagram.com/grapho</a>
+&quot;
+Facebook icon → &quot;<a href="http://Facebook.com/grapho">http://Facebook.com/grapho</a>
+&quot;
+Phone icon → &quot;+1 (415) 987-6543&quot;
+Mail icon → &quot;<a href="mailto:contact@optimalai.com">contact@optimalai.com</a>&quot;
+Map Pin icon → &quot;Headquarters: San Francisco, CA, USA&quot;
+Use lucide-react for Phone, Mail, MapPin icons. For Instagram and Facebook, use simple SVG paths (Instagram: rounded rectangle + circle, Facebook: F logo path)</p>
+<p>App.tsx: Wire all 5 slides into the Presentation component in order: CoverSlide, IntroSlide, AnalyticsSlide, QuoteSlide, OutroSlide.</p>
 
-            
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
             
         </body>
         </html>
