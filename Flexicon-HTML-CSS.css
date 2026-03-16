@@ -69,11 +69,25 @@ h2 {
     font-family: Inter, sans-serif;
 }
 
-/* Note / Tip / Important - Safety Blue (Information) */
-.markdown-alert-note, .markdown-alert-tip, .markdown-alert-important {
+/* Note - Safety Blue (General Information) */
+.markdown-alert-note {
     border-left-color: #002664 !important; /* ANSI Safety Blue */
     background-color: #e3f2fd !important;
     color: #002664 !important;
+}
+
+/* Tip - Professional Green (Best Practice) */
+.markdown-alert-tip {
+    border-left-color: #1b5e20 !important; /* Darker Green Border */
+    background-color: #e8f5e9 !important; /* Lighter Green Background */
+    color: #1b5e20 !important;
+}
+
+/* Important - Visual Purple (Critical Technical Info) */
+.markdown-alert-important {
+    border-left-color: #4a148c !important; /* Darker Purple Border */
+    background-color: #f3e5f5 !important; /* Lighter Purple Background */
+    color: #4a148c !important;
 }
 
 /* Warning - Safety Orange (Moderate Hazard) */
