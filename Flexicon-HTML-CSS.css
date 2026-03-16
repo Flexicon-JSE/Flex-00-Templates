@@ -11,7 +11,6 @@ body {
 }
 
 /* Flexicon Branding Header */
-/* 1. Thicker Yellow Line in Branding Header */
 body::before {
     content: "Flexicon";
     display: block;
@@ -22,7 +21,7 @@ body::before {
     text-align: center;
     text-transform: capitalize;
     margin-bottom: 20px;
-    border-top: 10px solid #fff200; /* Increased to 10px for thickness */
+    border-top: 10px solid #fff200; 
     padding-top: 10px;
 }
 
@@ -35,8 +34,8 @@ h1 {
     font-family: Inter; 
     font-weight: 700; 
     color: #004990; 
-    border-bottom: 2px solid #004990 !important; /* Exact Flexicon Blue */
-    padding-bottom: 10px; /* Slight increase to match visual weight */
+    border-bottom: 2px solid #004990 !important; 
+    padding-bottom: 10px; 
     text-align: center; 
 }
 
@@ -44,81 +43,71 @@ h2 {
     font-family: Inter; 
     font-weight: 700; 
     color: #004990;
-    border-bottom: 2px solid #004990 !important; /* Exact Flexicon Blue */
-    padding-bottom: 20px; /* Increased to 20px to center text */
-    margin-top: 20px;    /* Decreased to 20px to balance space from <hr> */
+    border-bottom: 2px solid #004990 !important; 
+    padding-bottom: 20px; 
+    margin-top: 20px;    
     margin-bottom: 20px;
 }
 
-h3 {
-    font-family: Inter, sans-serif;
-    margin-top: 20px;
+/* --- GFM Markdown Alerts (ANSI/ISO Safety Standard Mapping) --- */
+
+.markdown-alert {
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-left: 8px solid;
+    border-radius: 4px;
+    background-color: #f8f9fa;
 }
 
-/* Lists and Spacing - Tightened for professional lists */
-/* Lists and Spacing - Positioned closer to preceding text */
-/* Lists and Spacing - Forced upward to "attach" to text above */
-/* 1st Level: Solid Dot + Tight Spacing */
-/* 1st Level Bullets */
+.markdown-alert-title {
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    font-family: Inter, sans-serif;
+}
+
+/* Note / Tip / Important - Safety Blue (Information) */
+.markdown-alert-note, .markdown-alert-tip, .markdown-alert-important {
+    border-left-color: #002664 !important; /* ANSI Safety Blue */
+    background-color: #e3f2fd !important;
+    color: #002664 !important;
+}
+
+/* Warning - Safety Orange (Moderate Hazard) */
+.markdown-alert-warning {
+    border-left-color: #EF8200 !important; /* ANSI Safety Orange */
+    background-color: #fff3e0 !important;
+    color: #333 !important;
+}
+
+/* Caution - Safety Red (High Hazard / Danger) */
+.markdown-alert-caution {
+    border-left-color: #DA291C !important; /* ANSI Safety Red */
+    background-color: #ffebee !important;
+    color: #B71C1C !important;
+}
+
+/* Fix for raw Markdown markers showing in some parsers */
+.markdown-alert p:first-child:contains("[!") {
+    display: none;
+}
+
+/* Lists and Spacing */
 ul {
     margin-top: -5px !important; 
     margin-bottom: 10px; 
-    padding-left: 20px !important; /* Standardized indent */
+    padding-left: 20px !important; 
 }
 
 ul li {
     list-style-type: disc !important;
-    padding-left: 5px !important; /* Uniform gap between dot and text */
+    padding-left: 5px !important; 
 }
 
-/* 2nd Level: Hollow Dot Alignment */
-ul ul {
-    margin-top: 2px !important;
-    margin-bottom: 2px !important;
-    padding-left: 20px !important; /* Matching the 1st level's indent */
-}
-
-ul ul li {
-    list-style-type: circle !important;
-    padding-left: 5px !important; /* Force matching gap for hollow dots */
-}
-
-/* Optional: If you use H3 or Bold text to start a list, this ensures it stays tight */
-p + ul, p + ol {
-    margin-top: -15px !important;
-}
-
-/* Emphasis and Specialized Text */
-strong {
-    font-weight: bold;
-}
-
-/* Mapping .note class to blockquotes for Markdown ease-of-use */
-/* Mapping .note class to blockquotes for professional callouts */
-blockquote {
-    font-style: italic !important;
-    color: #333 !important; /* Slightly darker for better legibility on peach */
-    background-color: #fbe9e7 !important; /* Flexicon Light Red/Peach */
-    
-    /* Centering and Spacing */
-   /* Symmetrical Vertical Spacing */
-    margin: 20px 0 !important;
-    padding: 15px 20px !important; /* This 15px will now be perfectly even */
-    
-    border-left: 6px solid #ed174f !important; /* Flexicon Blue accent bar */
-    border-radius: 4px;
-    display: block; /* Ensures the container behaves as a full block */
-}
-
-/* ZERO out internal paragraph margins to fix Vertical Centering */
-blockquote p {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding: 0 !important;
-    line-height: 1.6 !important;
-}
-
-/* Horizontal Rule to match body-line */
+/* Horizontal Rule */
 hr {
     border: none; 
     height: 1.5px; 
@@ -126,28 +115,19 @@ hr {
     margin: 16px 0 20px 0;
 }
 
-/* Fenced Code Blocks - Technical Styling */
+/* Fenced Code Blocks */
 pre {
-    background-color: #f4f4f4 !important; /* Light Grey Background */
+    background-color: #f4f4f4 !important;
     padding: 15px !important;
     border-radius: 5px !important;
     border: 1px solid #ddd !important;
-    overflow-x: auto; /* Adds a scrollbar for long lines of code */
+    overflow-x: auto;
     margin: 20px 0 !important;
 }
 
 code {
     font-family: 'SF Mono', 'Consolas', monospace !important;
     font-size: 0.9em !important;
-    color: #333 !important;
-}
-
-/* Ensure inline code (like `P = F/A`) also has a subtle background */
-:not(pre) > code {
-    background-color: #f4f4f4 !important;
-    padding: 2px 4px !important;
-    border-radius: 3px !important;
-    border: 1px solid #ddd !important;
 }
 
 /* Status Badges */
@@ -160,22 +140,8 @@ code {
     text-transform: uppercase;
     border-radius: 4px;
     vertical-align: middle;
-    margin-right: 5px;
 }
 
-/* Specific Status Colors */
-.draft {
-    background-color: #fff200; /* Flexicon Yellow */
-    color: #333;
-}
-
-.approved {
-    background-color: #004990; /* Flexicon Blue */
-    color: #fff;
-}
-
-.confidential {
-    background-color: #ed174f; /* Flexicon Red */
-    color: #fff;
-    border: 1px solid #333; /* Adding a dark border for extra emphasis */
-}
+.draft { background-color: #fff200; color: #333; }
+.approved { background-color: #004990; color: #fff; }
+.confidential { background-color: #ed174f; color: #fff; border: 1px solid #333; }
