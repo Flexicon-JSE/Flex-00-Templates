@@ -226,12 +226,11 @@ pre:has(.mermaid) code {
     stroke: #fbc02d !important; 
 }
 
-/* --- 6. TEXT FORMATTING & ALIGNMENT (Clipping & Edge Label Fix) --- */
+/* --- 6. TEXT FORMATTING & ALIGNMENT (Final Artifact & Padding Fix) --- */
 :is(.mermaid, .mermaid-zoomed-view) .node foreignObject {
     overflow: visible !important;
 }
 
-/* Base text styling for nodes and labels */
 :is(.mermaid, .mermaid-zoomed-view) .node .label, 
 :is(.mermaid, .mermaid-zoomed-view) .edgeLabel,
 :is(.mermaid, .mermaid-zoomed-view) .label div,
@@ -245,14 +244,21 @@ pre:has(.mermaid) code {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    white-space: nowrap !important;
 }
 
-/* Specific fix for "Pass/Fail" edge label boxes */
+/* Fix for "Pass/Fail" edge label boxes - kills the white top-line artifact */
 :is(.mermaid, .mermaid-zoomed-view) .edgeLabel {
-    padding: 4px 10px !important; /* Adds the requested buffer */
-    background-color: rgba(255, 255, 255, 0.9) !important; /* Ensures the box is visible against arrows */
-    border-radius: 4px !important;
+    background-color: transparent !important; /* Removes outer artifact */
+    border: none !important;
+    padding: 0 !important;
+}
+
+:is(.mermaid, .mermaid-zoomed-view) .edgeLabel span,
+:is(.mermaid, .mermaid-zoomed-view) .edgeLabel div {
+    padding: 8px 18px !important; /* Increased for better legibility */
+    background-color: #ffffff !important; /* Solid white background */
+    border-radius: 6px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle shadow for depth */
 }
 
 /* --- 7. CLICK TO ZOOM MODAL (Refined for SVG Context) --- */
