@@ -177,7 +177,6 @@ code {
 }
 
 /* --- 2. THE CONTAINER FIX (Transparency, Centering & Depth) --- */
-/* Preserves the fix for grey boxes while adding subtle depth */
 pre:has(.mermaid), 
 pre:has(svg),
 div.mermaid {
@@ -192,7 +191,6 @@ div.mermaid {
     filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.1)); 
 }
 
-/* Neutralize the code tag background */
 pre:has(.mermaid) code {
     background-color: transparent !important;
     border: none !important;
@@ -204,12 +202,11 @@ pre:has(.mermaid) code {
 }
 
 .mermaid .node:hover {
-    transform: scale(1.03); /* Subtle "pop" when mouse hovers */
+    transform: scale(1.03); 
     filter: brightness(1.05);
 }
 
 /* --- 4. ANIMATED SIGNAL FLOW (Directional Logic) --- */
-/* Creates a subtle moving dash effect on the arrows */
 .mermaid .edgePath .path {
     stroke: var(--mermaid-line) !important;
     stroke-width: 1.5px !important;
@@ -222,26 +219,26 @@ pre:has(.mermaid) code {
     to { stroke-dashoffset: 0; }
 }
 
-/* Arrowheads */
 .mermaid .marker {
     fill: var(--mermaid-line) !important;
     stroke: var(--mermaid-line) !important;
 }
 
 /* --- 5. SEMANTIC LOGIC COLORS (Class Overrides) --- */
-/* Blue for Start/End */
 .mermaid .start-node rect, .mermaid .start-node circle { 
     fill: #e3f2fd !important; 
     stroke: var(--mermaid-border) !important; 
 }
-/* Yellow for Decisions */
 .mermaid .decision-node polygon { 
     fill: #fffde7 !important; 
     stroke: #fbc02d !important; 
 }
 
-/* --- 6. TEXT FORMATTING & ALIGNMENT (High-Clearance Fix) --- */
-/* Preserves the line-height and flex centering that solved clipping */
+/* --- 6. TEXT FORMATTING & ALIGNMENT (Clipping Fix) --- */
+.mermaid .node foreignObject {
+    overflow: visible !important; /* Prevents the box from hard-clipping text */
+}
+
 .mermaid .node .label, 
 .mermaid .edgeLabel,
 .mermaid .label div,
@@ -250,10 +247,9 @@ pre:has(.mermaid) code {
     font-family: var(--mermaid-font) !important;
     color: var(--mermaid-text) !important;
     fill: var(--mermaid-text) !important;
-    line-height: 1.6 !important; 
+    line-height: 1.2 !important; /* Reduced to fit better in SVG containers */
     text-align: center !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    white-space: nowrap !important;
 }
