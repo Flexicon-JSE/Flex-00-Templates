@@ -253,3 +253,32 @@ pre:has(.mermaid) code {
     align-items: center !important;
     justify-content: center !important;
 }
+
+/* --- 7. CLICK TO ZOOM MODAL --- */
+/* Changes cursor to a magnifying glass over diagrams */
+.mermaid {
+    cursor: zoom-in !important;
+}
+
+/* The Modal Overlay */
+#mermaid-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95); /* Light Flexicon background */
+    cursor: zoom-out;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px); /* Professional "glass" effect */
+}
+
+/* The zoomed-in SVG */
+#mermaid-modal svg {
+    max-width: 95%;
+    max-height: 95%;
+    filter: drop-shadow(0 0 20px rgba(0,0,0,0.1));
+}
