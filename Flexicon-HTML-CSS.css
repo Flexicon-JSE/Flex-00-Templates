@@ -162,57 +162,75 @@ code {
 
 
 /* ==========================================================================
-   MERMAID FLOWCHART STYLING
+   MERMAID FLOWCHART STYLING - V3 (Integrated Control)
    ========================================================================== */
 
-/* 1. Remove leading/trailing gray boxes and center the chart */
-pre.mermaid, 
-div.mermaid,
-.mermaid {
+/* --- 1. THE CONTROL PANEL (Change colors here) --- */
+:root {
+    --mermaid-bg: #ececff;         /* Node background */
+    --mermaid-border: #9370db;     /* Node outline */
+    --mermaid-line: #333333;       /* Arrow lines & heads */
+    --mermaid-text: #333333;       /* Label text */
+    --mermaid-font: 'Inter', sans-serif;
+}
+
+/* --- 2. THE CONTAINER FIX (Removes grey boxes & centers) --- */
+pre:has(.mermaid), 
+pre:has(svg),
+div.mermaid {
     background-color: transparent !important;
     border: none !important;
     padding: 0 !important;
+    margin: 30px auto !important;
     box-shadow: none !important;
-    margin: 30px auto !important; /* Centers the block and adds vertical spacing */
     display: flex;
     justify-content: center;
+    overflow: visible !important;
 }
 
-/* 2. Control Section for Colors */
-:root {
-    /* Existing Mermaid default colors */
-    --mermaid-node-bg: #ececff;      /* Light lavender/blue */
-    --mermaid-node-border: #9370db;  /* Medium purple */
-    --mermaid-line-color: #333333;   /* Dark grey/black for arrows */
-    --mermaid-text-color: #333333;
+/* Neutralize the code tag background */
+pre:has(.mermaid) code {
+    background-color: transparent !important;
+    border: none !important;
 }
 
-/* Node Background and Borders */
+/* --- 3. ELEMENT STYLING (Applies the colors) --- */
+
+/* Node Shapes */
 .mermaid .node rect,
 .mermaid .node circle,
 .mermaid .node ellipse,
 .mermaid .node polygon,
 .mermaid .node path {
-    fill: var(--mermaid-node-bg) !important;
-    stroke: var(--mermaid-node-border) !important;
+    fill: var(--mermaid-bg) !important;
+    stroke: var(--mermaid-border) !important;
     stroke-width: 1.5px !important;
 }
 
-/* Arrow Lines and Labels */
+/* Arrow Lines */
 .mermaid .edgePath .path {
-    stroke: var(--mermaid-line-color) !important;
+    stroke: var(--mermaid-line) !important;
     stroke-width: 1.5px !important;
 }
 
-/* Arrowheads */
+/* Arrow Heads */
 .mermaid .marker {
-    fill: var(--mermaid-line-color) !important;
-    stroke: var(--mermaid-line-color) !important;
+    fill: var(--mermaid-line) !important;
+    stroke: var(--mermaid-line) !important;
 }
 
-/* Text Labels */
+/* --- 4. TEXT FORMATTING & ALIGNMENT --- */
 .mermaid .node .label, 
-.mermaid .edgeLabel {
-    color: var(--mermaid-text-color) !important;
-    font-family: 'Inter', sans-serif !important; /* Matches your body font */
+.mermaid .edgeLabel,
+.mermaid text {
+    font-family: var(--mermaid-font) !important;
+    color: var(--mermaid-text) !important;
+    fill: var(--mermaid-text) !important;
+    text-anchor: middle !important;     /* Horizontal centering */
+    dominant-baseline: middle !important; /* Vertical centering */
+}
+
+/* Fixes for text clipping - adds internal padding to boxes */
+.mermaid .node .label {
+    padding: 8px !important;
 }
