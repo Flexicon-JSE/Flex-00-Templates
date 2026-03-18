@@ -219,27 +219,25 @@ pre:has(.mermaid) code {
     stroke: var(--mermaid-line) !important;
 }
 
-/* --- 4. TEXT FORMATTING & ALIGNMENT (The Final Fix) --- */
+/* --- 4. TEXT FORMATTING & ALIGNMENT --- */
 .mermaid .node .label, 
 .mermaid .edgeLabel,
 .mermaid .label div,
-.mermaid span.edgeLabel {
+.mermaid span.edgeLabel,
+.mermaid text {
     font-family: var(--mermaid-font) !important;
     color: var(--mermaid-text) !important;
     fill: var(--mermaid-text) !important;
     
-    /* Centering for HTML-based labels */
+    /* Centering and Vertical Spacing */
+    line-height: 1.6 !important; /* This adds the vertical "padding" */
+    text-align: center !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    text-align: center !important;
-    
-    /* Prevent clipping */
-    line-height: 1.2 !important;
-    white-space: nowrap !important; /* Forces box to expand rather than wrap */
 }
 
-/* Ensure the background of labels (like on arrows) is transparent */
-.mermaid .edgeLabel {
-    background-color: transparent !important;
+/* Remove the previous padding rule that caused clipping */
+.mermaid .node .label {
+    padding: 0 !important; 
 }
