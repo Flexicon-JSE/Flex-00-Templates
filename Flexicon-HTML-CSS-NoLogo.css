@@ -162,30 +162,34 @@ code {
 
 
 /* ==========================================================================
-   MERMAID FLOWCHART STYLING - V3 (Integrated Control)
+   MERMAID FLOWCHART STYLING - V4 (Engineering Professional Upgrade)
    ========================================================================== */
 
-/* --- 1. THE CONTROL PANEL (Change colors here) --- */
+/* --- 1. THE CONTROL PANEL (Brand Colors & Variables) --- */
 :root {
-    --mermaid-bg: #ececff;         /* Node background */
-    --mermaid-border: #9370db;     /* Node outline */
+    --mermaid-bg: #ffffff;         /* Node background */
+    --mermaid-border: #004990;     /* Flexicon Blue */
     --mermaid-line: #333333;       /* Arrow lines & heads */
     --mermaid-text: #333333;       /* Label text */
+    --mermaid-accent: #ed174f;     /* Flexicon Red */
+    --mermaid-warn: #fff200;       /* Flexicon Yellow */
     --mermaid-font: 'Inter', sans-serif;
 }
 
-/* --- 2. THE CONTAINER FIX (Removes grey boxes & centers) --- */
+/* --- 2. THE CONTAINER FIX (Transparency, Centering & Depth) --- */
+/* Preserves the fix for grey boxes while adding subtle depth */
 pre:has(.mermaid), 
 pre:has(svg),
 div.mermaid {
     background-color: transparent !important;
     border: none !important;
     padding: 0 !important;
-    margin: 30px auto !important;
+    margin: 40px auto !important;
     box-shadow: none !important;
     display: flex;
     justify-content: center;
     overflow: visible !important;
+    filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.1)); 
 }
 
 /* Neutralize the code tag background */
@@ -194,32 +198,50 @@ pre:has(.mermaid) code {
     border: none !important;
 }
 
-/* --- 3. ELEMENT STYLING (Applies the colors) --- */
-
-/* Node Shapes */
-.mermaid .node rect,
-.mermaid .node circle,
-.mermaid .node ellipse,
-.mermaid .node polygon,
-.mermaid .node path {
-    fill: var(--mermaid-bg) !important;
-    stroke: var(--mermaid-border) !important;
-    stroke-width: 1.5px !important;
+/* --- 3. INTERACTIVE NODES (Hover Effects) --- */
+.mermaid .node {
+    transition: transform 0.2s ease-in-out, filter 0.2s ease !important;
 }
 
-/* Arrow Lines */
+.mermaid .node:hover {
+    transform: scale(1.03); /* Subtle "pop" when mouse hovers */
+    filter: brightness(1.05);
+}
+
+/* --- 4. ANIMATED SIGNAL FLOW (Directional Logic) --- */
+/* Creates a subtle moving dash effect on the arrows */
 .mermaid .edgePath .path {
     stroke: var(--mermaid-line) !important;
     stroke-width: 1.5px !important;
+    stroke-dasharray: 8;
+    animation: mermaidFlow 15s linear infinite;
 }
 
-/* Arrow Heads */
+@keyframes mermaidFlow {
+    from { stroke-dashoffset: 100; }
+    to { stroke-dashoffset: 0; }
+}
+
+/* Arrowheads */
 .mermaid .marker {
     fill: var(--mermaid-line) !important;
     stroke: var(--mermaid-line) !important;
 }
 
-/* --- 4. TEXT FORMATTING & ALIGNMENT --- */
+/* --- 5. SEMANTIC LOGIC COLORS (Class Overrides) --- */
+/* Blue for Start/End */
+.mermaid .start-node rect, .mermaid .start-node circle { 
+    fill: #e3f2fd !important; 
+    stroke: var(--mermaid-border) !important; 
+}
+/* Yellow for Decisions */
+.mermaid .decision-node polygon { 
+    fill: #fffde7 !important; 
+    stroke: #fbc02d !important; 
+}
+
+/* --- 6. TEXT FORMATTING & ALIGNMENT (High-Clearance Fix) --- */
+/* Preserves the line-height and flex centering that solved clipping */
 .mermaid .node .label, 
 .mermaid .edgeLabel,
 .mermaid .label div,
@@ -228,16 +250,10 @@ pre:has(.mermaid) code {
     font-family: var(--mermaid-font) !important;
     color: var(--mermaid-text) !important;
     fill: var(--mermaid-text) !important;
-    
-    /* Centering and Vertical Spacing */
-    line-height: 1.6 !important; /* This adds the vertical "padding" */
+    line-height: 1.6 !important; 
     text-align: center !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-}
-
-/* Remove the previous padding rule that caused clipping */
-.mermaid .node .label {
-    padding: 0 !important; 
+    white-space: nowrap !important;
 }
