@@ -206,78 +206,69 @@ pre:has(.mermaid) code {
     filter: brightness(1.05);
 }
 
-/* --- 4. ANIMATED SIGNAL FLOW (Directional Logic) --- */
-.mermaid .edgePath .path {
+/* --- 4. ANIMATED SIGNAL FLOW (Updated for Zoom) --- */
+:is(.mermaid, .mermaid-zoomed-view) .edgePath .path {
     stroke: var(--mermaid-line) !important;
     stroke-width: 1.5px !important;
     stroke-dasharray: 8;
     animation: mermaidFlow 15s linear infinite;
 }
 
-@keyframes mermaidFlow {
-    from { stroke-dashoffset: 100; }
-    to { stroke-dashoffset: 0; }
-}
-
-.mermaid .marker {
-    fill: var(--mermaid-line) !important;
-    stroke: var(--mermaid-line) !important;
-}
-
-/* --- 5. SEMANTIC LOGIC COLORS (Class Overrides) --- */
-.mermaid .start-node rect, .mermaid .start-node circle { 
+/* --- 5. SEMANTIC LOGIC COLORS (Updated for Zoom) --- */
+:is(.mermaid, .mermaid-zoomed-view) .start-node rect, 
+:is(.mermaid, .mermaid-zoomed-view) .start-node circle { 
     fill: #e3f2fd !important; 
     stroke: var(--mermaid-border) !important; 
 }
-.mermaid .decision-node polygon { 
+:is(.mermaid, .mermaid-zoomed-view) .decision-node polygon { 
     fill: #fffde7 !important; 
     stroke: #fbc02d !important; 
 }
 
-/* --- 6. TEXT FORMATTING & ALIGNMENT (Clipping Fix) --- */
-.mermaid .node foreignObject {
-    overflow: visible !important; /* Prevents the box from hard-clipping text */
+/* --- 6. TEXT FORMATTING & ALIGNMENT (Updated for Zoom) --- */
+:is(.mermaid, .mermaid-zoomed-view) .node foreignObject {
+    overflow: visible !important;
 }
 
-.mermaid .node .label, 
-.mermaid .edgeLabel,
-.mermaid .label div,
-.mermaid span.edgeLabel,
-.mermaid text {
+:is(.mermaid, .mermaid-zoomed-view) .node .label, 
+:is(.mermaid, .mermaid-zoomed-view) .edgeLabel,
+:is(.mermaid, .mermaid-zoomed-view) .label div,
+:is(.mermaid, .mermaid-zoomed-view) span.edgeLabel,
+:is(.mermaid, .mermaid-zoomed-view) text {
     font-family: var(--mermaid-font) !important;
     color: var(--mermaid-text) !important;
     fill: var(--mermaid-text) !important;
-    line-height: 1.2 !important; /* Reduced to fit better in SVG containers */
+    line-height: 1.2 !important; 
     text-align: center !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    white-space: nowrap !important;
 }
 
-/* --- 7. CLICK TO ZOOM MODAL --- */
-/* Changes cursor to a magnifying glass over diagrams */
-.mermaid {
-    cursor: zoom-in !important;
-}
-
-/* The Modal Overlay */
+/* --- 7. CLICK TO ZOOM MODAL (Refined for SVG Context) --- */
 #mermaid-modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     z-index: 10000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.95); /* Light Flexicon background */
+    background-color: rgba(255, 255, 255, 0.95);
     cursor: zoom-out;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(5px); /* Professional "glass" effect */
+    backdrop-filter: blur(5px);
 }
 
-/* The zoomed-in SVG */
-#mermaid-modal svg {
+.mermaid-zoomed-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mermaid-zoomed-view svg {
     max-width: 95%;
     max-height: 95%;
     filter: drop-shadow(0 0 20px rgba(0,0,0,0.1));
