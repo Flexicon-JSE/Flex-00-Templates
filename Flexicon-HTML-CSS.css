@@ -159,3 +159,60 @@ code {
 .draft { background-color: #fff200; color: #333; }
 .approved { background-color: #004990; color: #fff; }
 .confidential { background-color: #ed174f; color: #fff; border: 1px solid #333; }
+
+
+/* ==========================================================================
+   MERMAID FLOWCHART STYLING
+   ========================================================================== */
+
+/* 1. Remove leading/trailing gray boxes and center the chart */
+pre.mermaid, 
+div.mermaid,
+.mermaid {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    margin: 30px auto !important; /* Centers the block and adds vertical spacing */
+    display: flex;
+    justify-content: center;
+}
+
+/* 2. Control Section for Colors */
+:root {
+    /* Existing Mermaid default colors */
+    --mermaid-node-bg: #ececff;      /* Light lavender/blue */
+    --mermaid-node-border: #9370db;  /* Medium purple */
+    --mermaid-line-color: #333333;   /* Dark grey/black for arrows */
+    --mermaid-text-color: #333333;
+}
+
+/* Node Background and Borders */
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon,
+.mermaid .node path {
+    fill: var(--mermaid-node-bg) !important;
+    stroke: var(--mermaid-node-border) !important;
+    stroke-width: 1.5px !important;
+}
+
+/* Arrow Lines and Labels */
+.mermaid .edgePath .path {
+    stroke: var(--mermaid-line-color) !important;
+    stroke-width: 1.5px !important;
+}
+
+/* Arrowheads */
+.mermaid .marker {
+    fill: var(--mermaid-line-color) !important;
+    stroke: var(--mermaid-line-color) !important;
+}
+
+/* Text Labels */
+.mermaid .node .label, 
+.mermaid .edgeLabel {
+    color: var(--mermaid-text-color) !important;
+    font-family: 'Inter', sans-serif !important; /* Matches your body font */
+}
