@@ -1,7 +1,8 @@
-/* Flexicon Style Template for Markdown Export */
+/* Flexicon Style Template for Markdown Export - LITE VERSION */
+/* Removed Mermaid logic to prevent 18MB file size explosion */
 
 /* Imports for Inter, Lato, and News Cycle */
-@import url('[https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Lato:wght@400;700;900&family=News+Cycle:wght@400;700;900&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Lato:wght@400;700;900&family=News+Cycle:wght@400;700;900&display=swap)');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Lato:wght@400;700;900&family=News+Cycle:wght@400;700;900&display=swap');
 
 body { 
     font-family: Inter, 'News Cycle', Helvetica, sans-serif; 
@@ -53,9 +54,9 @@ h2 {
 blockquote {
     padding: 15px 20px;
     margin: 20px 0;
-    background-color: #f2f2f2 !important; /* Light Gray Background */
-    border-left: 8px solid #555555 !important; /* Darker Gray Left Border */
-    color: #000000 !important; /* Black Text */
+    background-color: #f2f2f2 !important; 
+    border-left: 8px solid #555555 !important; 
+    color: #000000 !important; 
     border-radius: 0 4px 4px 0;
 }
 
@@ -63,8 +64,7 @@ blockquote p {
     margin: 0;
 }
 
-/* --- GFM Markdown Alerts (ANSI/ISO Safety Standard Mapping) --- */
-
+/* --- GFM Markdown Alerts --- */
 .markdown-alert {
     padding: 15px 20px;
     margin-bottom: 20px;
@@ -83,44 +83,34 @@ blockquote p {
     font-family: Inter, sans-serif;
 }
 
-/* Note - Safety Blue (General Information) */
 .markdown-alert-note {
-    border-left-color: #002664 !important; /* ANSI Safety Blue */
+    border-left-color: #002664 !important;
     background-color: #e3f2fd !important;
     color: #002664 !important;
 }
 
-/* Tip - Professional Green (Best Practice) */
 .markdown-alert-tip {
-    border-left-color: #1b5e20 !important; /* Darker Green Border */
-    background-color: #e8f5e9 !important; /* Lighter Green Background */
+    border-left-color: #1b5e20 !important;
+    background-color: #e8f5e9 !important;
     color: #1b5e20 !important;
 }
 
-/* Important - Visual Purple (Critical Technical Info) */
 .markdown-alert-important {
-    border-left-color: #4a148c !important; /* Darker Purple Border */
-    background-color: #f3e5f5 !important; /* Lighter Purple Background */
+    border-left-color: #4a148c !important;
+    background-color: #f3e5f5 !important;
     color: #4a148c !important;
 }
 
-/* Warning - Safety Orange (Moderate Hazard) */
 .markdown-alert-warning {
-    border-left-color: #EF8200 !important; /* ANSI Safety Orange */
+    border-left-color: #EF8200 !important;
     background-color: #fff3e0 !important;
     color: #333 !important;
 }
 
-/* Caution - Safety Red (High Hazard / Danger) */
 .markdown-alert-caution {
-    border-left-color: #DA291C !important; /* ANSI Safety Red */
+    border-left-color: #DA291C !important;
     background-color: #ffebee !important;
     color: #B71C1C !important;
-}
-
-/* Fix for raw Markdown markers showing in some parsers */
-.markdown-alert p:first-child:contains("[!") {
-    display: none;
 }
 
 /* Lists and Spacing */
@@ -145,12 +135,12 @@ hr {
 
 /* Fenced Code Blocks */
 pre {
-    background-color: #f4f4f4 !important; /* Light Gray Background */
-    color: #000000 !important; /* Black Text */
+    background-color: #f4f4f4 !important;
+    color: #000000 !important;
     padding: 15px !important;
     border-radius: 0 4px 4px 0 !important;
     border: 1px solid #ddd !important;
-    border-left: 8px solid #555555 !important; /* Darker Gray Left Border */
+    border-left: 8px solid #555555 !important; 
     overflow-x: auto;
     margin: 20px 0 !important;
 }
@@ -175,121 +165,3 @@ code {
 .draft { background-color: #fff200; color: #333; }
 .approved { background-color: #004990; color: #fff; }
 .confidential { background-color: #ed174f; color: #fff; border: 1px solid #333; }
-
-
-/* ==========================================================================
-   MERMAID FLOWCHART STYLING - V4 (Engineering Professional Upgrade)
-   ========================================================================== */
-
-/* --- 1. THE CONTROL PANEL (Brand Colors & Variables) --- */
-:root {
-    --mermaid-bg: #ffffff;         /* Node background */
-    --mermaid-border: #004990;     /* Flexicon Blue */
-    --mermaid-line: #333333;       /* Arrow lines & heads */
-    --mermaid-text: #333333;       /* Label text */
-    --mermaid-accent: #ed174f;     /* Flexicon Red */
-    --mermaid-warn: #fff200;       /* Flexicon Yellow */
-    --mermaid-font: 'Inter', sans-serif;
-}
-
-/* --- 2. THE CONTAINER FIX (Transparency, Centering & Depth) --- */
-pre:has(.mermaid), 
-pre:has(svg),
-div.mermaid {
-    background-color: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 40px auto !important;
-    box-shadow: none !important;
-    display: flex;
-    justify-content: center;
-    overflow: visible !important;
-    filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.1)); 
-}
-
-pre:has(.mermaid) code {
-    background-color: transparent !important;
-    border: none !important;
-}
-
-/* --- 4. ANIMATED SIGNAL FLOW (Updated for Zoom) --- */
-:is(.mermaid, .mermaid-zoomed-view) .edgePath .path {
-    stroke: var(--mermaid-line) !important;
-    stroke-width: 1.5px !important;
-    stroke-dasharray: 8;
-    animation: mermaidFlow 15s linear infinite;
-}
-
-/* --- 5. SEMANTIC LOGIC COLORS (Updated for Zoom) --- */
-:is(.mermaid, .mermaid-zoomed-view) .start-node rect, 
-:is(.mermaid, .mermaid-zoomed-view) .start-node circle { 
-    fill: #e3f2fd !important; 
-    stroke: var(--mermaid-border) !important; 
-}
-:is(.mermaid, .mermaid-zoomed-view) .decision-node polygon { 
-    fill: #fffde7 !important; 
-    stroke: #fbc02d !important; 
-}
-
-/* --- 6. TEXT FORMATTING & ALIGNMENT (Stability & Legibility Fix) --- */
-:is(.mermaid, .mermaid-zoomed-view) .node foreignObject {
-    overflow: visible !important; /* Essential to prevent clipping */
-}
-
-:is(.mermaid, .mermaid-zoomed-view) .node .label, 
-:is(.mermaid, .mermaid-zoomed-view) .edgeLabel,
-:is(.mermaid, .mermaid-zoomed-view) .label div,
-:is(.mermaid, .mermaid-zoomed-view) span.edgeLabel,
-:is(.mermaid, .mermaid-zoomed-view) text {
-    font-family: var(--mermaid-font) !important;
-    color: var(--mermaid-text) !important;
-    fill: var(--mermaid-text) !important;
-    line-height: 1.1 !important; /* Tightened to prevent vertical overflow */
-    text-align: center !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-/* Simplified fix for "Pass/Fail" boxes - Reverts to stable single-container logic */
-:is(.mermaid, .mermaid-zoomed-view) .edgeLabel {
-    background-color: #ffffff !important; /* Solid background for legibility */
-    padding: 2px 8px !important;       /* Moderate padding that won't clip */
-    border-radius: 4px !important;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-    border: 1px solid #ddd !important; /* Replaces the "white line" with a real border */
-}
-
-/* Kills any nested background artifacts from previous attempts */
-:is(.mermaid, .mermaid-zoomed-view) .edgeLabel :is(span, div) {
-    background-color: transparent !important;
-    padding: 0 !important;
-}
-
-/* --- 7. CLICK TO ZOOM MODAL (Refined for SVG Context) --- */
-#mermaid-modal {
-    display: none;
-    position: fixed;
-    z-index: 10000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
-    cursor: zoom-out;
-    backdrop-filter: blur(5px);
-}
-
-.mermaid-zoomed-view {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.mermaid-zoomed-view svg {
-    max-width: 95%;
-    max-height: 95%;
-    filter: drop-shadow(0 0 20px rgba(0,0,0,0.1));
-}
