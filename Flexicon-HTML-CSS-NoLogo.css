@@ -1,4 +1,5 @@
-/* Flexicon Style Template for Markdown Export */
+/* Flexicon Style Template for Markdown Export - LITE VERSION */
+/* Removed Mermaid logic to prevent 18MB file size explosion */
 
 /* Imports for Inter, Lato, and News Cycle */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Lato:wght@400;700;900&family=News+Cycle:wght@400;700;900&display=swap');
@@ -19,7 +20,7 @@ body::before {
     font-size: 2.25em;
     font-weight: 900;
     text-align: center;
-    text-transform: capitalize; 
+    text-transform: capitalize;
     margin-bottom: 20px; */
     border-top: 10px solid #fff200; 
     padding-top: 10px;
@@ -49,8 +50,21 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* --- GFM Markdown Alerts (ANSI/ISO Safety Standard Mapping) --- */
+/* --- Blockquotes (Default Formatting for ">" symbol) --- */
+blockquote {
+    padding: 15px 20px;
+    margin: 20px 0;
+    background-color: #f2f2f2 !important; 
+    border-left: 8px solid #555555 !important; 
+    color: #000000 !important; 
+    border-radius: 0 4px 4px 0;
+}
 
+blockquote p {
+    margin: 0;
+}
+
+/* --- GFM Markdown Alerts --- */
 .markdown-alert {
     padding: 15px 20px;
     margin-bottom: 20px;
@@ -69,44 +83,34 @@ h2 {
     font-family: Inter, sans-serif;
 }
 
-/* Note - Safety Blue (General Information) */
 .markdown-alert-note {
-    border-left-color: #002664 !important; /* ANSI Safety Blue */
+    border-left-color: #002664 !important;
     background-color: #e3f2fd !important;
     color: #002664 !important;
 }
 
-/* Tip - Professional Green (Best Practice) */
 .markdown-alert-tip {
-    border-left-color: #1b5e20 !important; /* Darker Green Border */
-    background-color: #e8f5e9 !important; /* Lighter Green Background */
+    border-left-color: #1b5e20 !important;
+    background-color: #e8f5e9 !important;
     color: #1b5e20 !important;
 }
 
-/* Important - Visual Purple (Critical Technical Info) */
 .markdown-alert-important {
-    border-left-color: #4a148c !important; /* Darker Purple Border */
-    background-color: #f3e5f5 !important; /* Lighter Purple Background */
+    border-left-color: #4a148c !important;
+    background-color: #f3e5f5 !important;
     color: #4a148c !important;
 }
 
-/* Warning - Safety Orange (Moderate Hazard) */
 .markdown-alert-warning {
-    border-left-color: #EF8200 !important; /* ANSI Safety Orange */
+    border-left-color: #EF8200 !important;
     background-color: #fff3e0 !important;
     color: #333 !important;
 }
 
-/* Caution - Safety Red (High Hazard / Danger) */
 .markdown-alert-caution {
-    border-left-color: #DA291C !important; /* ANSI Safety Red */
+    border-left-color: #DA291C !important;
     background-color: #ffebee !important;
     color: #B71C1C !important;
-}
-
-/* Fix for raw Markdown markers showing in some parsers */
-.markdown-alert p:first-child:contains("[!") {
-    display: none;
 }
 
 /* Lists and Spacing */
@@ -132,9 +136,11 @@ hr {
 /* Fenced Code Blocks */
 pre {
     background-color: #f4f4f4 !important;
+    color: #000000 !important;
     padding: 15px !important;
-    border-radius: 5px !important;
+    border-radius: 0 4px 4px 0 !important;
     border: 1px solid #ddd !important;
+    border-left: 8px solid #555555 !important; 
     overflow-x: auto;
     margin: 20px 0 !important;
 }
