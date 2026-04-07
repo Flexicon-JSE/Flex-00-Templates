@@ -148,6 +148,8 @@ pre {
 code {
     font-family: 'SF Mono', 'Consolas', monospace !important;
     font-size: 0.9em !important;
+    background-color: #f4f4f4 !important;
+    color: #000000 !important;
 }
 
 /* Status Badges */
