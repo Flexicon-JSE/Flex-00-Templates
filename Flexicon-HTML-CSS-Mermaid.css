@@ -53,9 +53,9 @@ h2 {
 blockquote {
     padding: 15px 20px;
     margin: 20px 0;
-    background-color: #f2f2f2 !important; /* Light Gray Background */
-    border-left: 8px solid #555555 !important; /* Darker Gray Left Border */
-    color: #000000 !important; /* Black Text */
+    border-left: 8px solid #ffbf50 !important; 
+    background-color: #fff2dc !important;
+    color: #000000 !important;
     border-radius: 0 4px 4px 0;
 }
 
