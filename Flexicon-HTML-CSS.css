@@ -113,7 +113,7 @@ blockquote p {
 
 /* Caution - Safety Red (High Hazard / Danger) */
 .markdown-alert-caution {
-    border-left-color: ##B71C1C !important; /* ANSI Safety Red */
+    border-left-color: #B71C1C !important; /* ANSI Safety Red */
     background-color: #ffebee !important;
     color: #B71C1C !important;
 }
