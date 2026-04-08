@@ -54,7 +54,7 @@ h2 {
 blockquote {
     padding: 15px 20px;
     margin: 20px 0;
-    border-left: 8px solid #ffbf50 !important; 
+    border-left: 8px solid #ffc562 !important; 
     background-color: #fff2dc !important;
     color: #000000 !important;
     border-radius: 0 4px 4px 0;
@@ -83,32 +83,37 @@ blockquote p {
     font-family: Inter, sans-serif;
 }
 
+/* Note - Safety Blue (General Information) */
 .markdown-alert-note {
-    border-left-color: #002664 !important;
+    border-left-color: #002664 !important; /* ANSI Safety Blue */
     background-color: #e3f2fd !important;
     color: #002664 !important;
 }
 
+/* Tip - Professional Green (Best Practice) */
 .markdown-alert-tip {
-    border-left-color: #1b5e20 !important;
-    background-color: #e8f5e9 !important;
+    border-left-color: #1b5e20 !important; /* Darker Green Border */
+    background-color: #e8f5e9 !important; /* Lighter Green Background */
     color: #1b5e20 !important;
 }
 
+/* Important - Visual Purple (Critical Technical Info) */
 .markdown-alert-important {
-    border-left-color: #4a148c !important;
-    background-color: #f3e5f5 !important;
+    border-left-color: #4a148c !important; /* Darker Purple Border */
+    background-color: #f3e5f5 !important; /* Lighter Purple Background */
     color: #4a148c !important;
 }
 
+/* Warning - Safety Orange (Moderate Hazard) */
 .markdown-alert-warning {
-    border-left-color: #EF8200 !important;
+    border-left-color: #EF8200 !important; /* ANSI Safety Orange */
     background-color: #fff3e0 !important;
     color: #333 !important;
 }
 
+/* Caution - Safety Red (High Hazard / Danger) */
 .markdown-alert-caution {
-    border-left-color: #DA291C !important;
+    border-left-color: ##B71C1C !important; /* ANSI Safety Red */
     background-color: #ffebee !important;
     color: #B71C1C !important;
 }
@@ -140,7 +145,7 @@ pre {
     padding: 15px !important;
     border-radius: 0 4px 4px 0 !important;
     border: 1px solid #ddd !important;
-    border-left: 8px solid #ffbf50 !important; 
+    border-left: 8px solid #ffc562 !important; 
     overflow-x: auto;
     margin: 5px 0 !important;
 }
