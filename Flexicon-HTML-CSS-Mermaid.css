@@ -174,9 +174,9 @@ hr {
     vertical-align: middle;
 }
 
-.draft { background-color: #fff200; color: #333; }
+.draft { background-color: #fff200; color: #333; border: 1px solid #333; }
 .approved { background-color: #004990; color: #fff; }
-.confidential { background-color: #fad1db; color: #333333; border: 1px solid #333; }
+.confidential { background-color: #fad1db; color: #3333; border: 1px solid #333; }
 
 
 /* ==========================================================================
