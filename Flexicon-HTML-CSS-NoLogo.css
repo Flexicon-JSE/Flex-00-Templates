@@ -107,8 +107,8 @@ blockquote p {
 /* Warning - Safety Orange (Moderate Hazard) */
 .markdown-alert-warning {
     border-left-color: #EF8200 !important; /* ANSI Safety Orange */
-    background-color: #fff3e0 !important;
-    color: #333 !important;
+    background-color: #f9cd99 !important;
+    color: #EF8200 !important;
 }
 
 /* Caution - Safety Red (High Hazard / Danger) */
