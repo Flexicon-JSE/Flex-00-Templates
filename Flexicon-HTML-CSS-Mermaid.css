@@ -125,9 +125,9 @@ code {
 
 /* Warning - Safety Orange (Moderate Hazard) */
 .markdown-alert-warning {
-    border-left-color: #EF8200 !important; /* ANSI Safety Orange */
-    background-color: #fce6cc !important;
-    color: #bf6800 !important;
+    border-left-color: #FF7900 !important; /* ANSI Safety Orange */
+    background-color: #ffe4cc !important;
+    color: #cc6100 !important;
 }
 
 /* Caution - Safety Red (High Hazard / Danger) */
