@@ -63,6 +63,25 @@ blockquote p {
     margin: 0;
 }
 
+/* Fenced Code Blocks */
+pre {
+    background-color: #fff2dc !important;
+    color: #000000 !important;
+    padding: 15px !important;
+    border-radius: 0 4px 4px 0 !important;
+    border: 1px solid #ddd !important;
+    border-left: 8px solid #ffc562 !important; 
+    overflow-x: auto;
+    margin: 5px 0 !important;
+}
+
+code {
+    font-family: 'SF Mono', 'Consolas', monospace !important;
+    font-size: 0.9em !important;
+    background-color: #fff2dc !important;
+    color: #000000 !important;
+}
+
 /* --- GFM Markdown Alerts (ANSI/ISO Safety Standard Mapping) --- */
 
 .markdown-alert {
@@ -107,7 +126,7 @@ blockquote p {
 /* Warning - Safety Orange (Moderate Hazard) */
 .markdown-alert-warning {
     border-left-color: #EF8200 !important; /* ANSI Safety Orange */
-    background-color: #fadab3 !important;
+    background-color: #fce6cc !important;
     color: #EF8200 !important;
 }
 
@@ -141,25 +160,6 @@ hr {
     height: 1.5px; 
     background-color: #004990; 
     margin: 16px 0 20px 0;
-}
-
-/* Fenced Code Blocks */
-pre {
-    background-color: #fff2dc !important;
-    color: #000000 !important;
-    padding: 15px !important;
-    border-radius: 0 4px 4px 0 !important;
-    border: 1px solid #ddd !important;
-    border-left: 8px solid #ffc562 !important; 
-    overflow-x: auto;
-    margin: 5px 0 !important;
-}
-
-code {
-    font-family: 'SF Mono', 'Consolas', monospace !important;
-    font-size: 0.9em !important;
-    background-color: #fff2dc !important;
-    color: #000000 !important;
 }
 
 /* Status Badges */
