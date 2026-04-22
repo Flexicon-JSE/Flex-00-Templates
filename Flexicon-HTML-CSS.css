@@ -1,8 +1,8 @@
 /* Flexicon Style Template for Markdown Export - LITE VERSION */
 /* Removed Mermaid logic to prevent 18MB file size explosion */
 
-/* Imports for Inter, Lato, and News Cycle */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Lato:wght@400;700;900&family=News+Cycle:wght@400;700;900&display=swap');
+/* Imports for Inter, Lato, and Fira Code*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Lato:wght@400;700;900&family=Fira+Code:wght@300,400,500,600,700&display=swap');
 
 body { 
     font-family: Inter, 'News Cycle', Helvetica, sans-serif; 
@@ -64,8 +64,10 @@ blockquote p {
     margin: 0;
 }
 
-/* Fenced Code Blocks */
+/* --- Fenced Code Blocks (Python/Scripts) --- */
 pre {
+    font-family: 'Fira Code', monospace !important;
+    font-weight: 500 !important;
     background-color: #fff2dc !important;
     color: #000000 !important;
     padding: 15px !important;
@@ -76,12 +78,14 @@ pre {
     margin: 5px 0 !important;
 }
 
+/* --- Inline Code (Backticks) --- */
 code {
-    font-family: 'SF Mono', 'Consolas', monospace !important;
-    font-size: 1em !important; /* Changed from 0.9em to 1em to match body text */
+    font-family: 'Fira Code', monospace !important;
+    font-weight: 500 !important;
+    font-size: 1em !important; 
     background-color: #fff2dc !important;
     color: #000000 !important;
-    padding: 2px 4px; /* Optional: adds a tiny bit of horizontal space around the code */
+    padding: 2px 4px;
     border-radius: 3px;
 }
 
