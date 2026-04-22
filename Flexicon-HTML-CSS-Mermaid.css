@@ -178,6 +178,43 @@ hr {
 .approved { background-color: #004990; color: #fff; }
 .confidential { background-color: #fad1db; color: #333; border: 1px solid #333; }
 
+/* --- Tables (The "Cramped" Fix) --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.95em;
+    font-family: Inter, sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+    padding: 12px 15px; /* This adds the necessary breathing room */
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+}
+
+th {
+    background-color: #004990; /* Flexicon Blue */
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 1px;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa; /* Subtle zebra striping for readability */
+}
+
+tr:last-of-type {
+    border-bottom: 2px solid #004990;
+}
+
+tr:hover {
+    background-color: #f1f4f8; /* Highlights the row for easier tracking */
+}
+
 
 /* ==========================================================================
    MERMAID FLOWCHART STYLING - V4 (Engineering Professional Upgrade)
