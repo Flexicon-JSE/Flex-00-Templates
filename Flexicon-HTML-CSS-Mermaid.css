@@ -207,9 +207,9 @@ tr:nth-child(even) {
     background-color: #f8f9fa; /* Subtle zebra striping for readability */
 }
 
-tr:last-of-type {
+/*tr:last-of-type {
     border-bottom: 2px solid #004990;
-}
+}*/
 
 tr:hover {
     background-color: fff2dc; /* Highlights the row for easier tracking */
