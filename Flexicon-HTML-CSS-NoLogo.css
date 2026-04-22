@@ -207,5 +207,5 @@ tr:last-of-type {
 }
 
 tr:hover {
-    background-color: #f1f4f8; /* Highlights the row for easier tracking */
+    background-color: #fff2dc; /* Highlights the row for easier tracking */
 }
