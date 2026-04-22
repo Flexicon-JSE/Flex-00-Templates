@@ -77,9 +77,11 @@ pre {
 
 code {
     font-family: 'SF Mono', 'Consolas', monospace !important;
-    font-size: 0.9em !important;
+    font-size: 1em !important; /* Changed from 0.9em to 1em to match body text */
     background-color: #fff2dc !important;
     color: #000000 !important;
+    padding: 2px 4px; /* Optional: adds a tiny bit of horizontal space around the code */
+    border-radius: 3px;
 }
 
 /* --- GFM Markdown Alerts (ANSI/ISO Safety Standard Mapping) --- */
