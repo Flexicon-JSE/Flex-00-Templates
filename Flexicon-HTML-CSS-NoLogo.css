@@ -203,8 +203,12 @@ th {
     letter-spacing: 1px;
 }
 
+tr:nth-child(odd) {
+    background-color: #e6edf4; /* Subtle zebra striping for readability */
+}
+
 tr:nth-child(even) {
-    background-color: #f8f9fa; /* Subtle zebra striping for readability */
+    background-color: #ccdbe9; /* Subtle zebra striping for readability */
 }
 
 /*tr:last-of-type {
