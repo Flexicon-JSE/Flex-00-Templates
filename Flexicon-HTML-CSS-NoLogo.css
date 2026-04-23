@@ -75,6 +75,10 @@ pre {
     border-left: 8px solid #ffc562 !important; 
     overflow-x: auto;
     margin: 5px 0 !important;
+    /* Added Word Wrap Logic */
+    white-space: pre-wrap !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
 }
 
 /* --- Inline Code (Backticks) --- */
@@ -86,6 +90,10 @@ code {
     color: #000000 !important;
     padding: 2px 4px;
     border-radius: 3px;
+    /* Added Word Wrap Logic */
+    white-space: pre-wrap !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
 }
 
 /* --- GFM Markdown Alerts --- */
