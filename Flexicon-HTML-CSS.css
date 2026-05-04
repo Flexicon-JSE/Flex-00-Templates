@@ -11,7 +11,7 @@ body {
     color: #333;
 }
 
-/* Flexicon Branding Header - forced update*/
+/* Flexicon Branding Header*/
 body::before {
     content: "Flexicon";
     display: block;
