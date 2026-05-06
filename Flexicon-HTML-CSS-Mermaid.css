@@ -92,6 +92,7 @@ code {
     color: #000000 !important;
     padding: 2px 4px;
     border-radius: 3px;
+    border: 1px solid #ddd !important;
     /* Added Word Wrap Logic */
     white-space: pre-wrap !important;
     overflow-wrap: break-word !important;
