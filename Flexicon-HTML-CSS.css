@@ -23,19 +23,25 @@ body {
     padding-top: 20px;
 }
 
+/* --- Flexicon Branding Header (Resized & Centered Fix) --- */
 body::before {
-    /* Reference the logo graphic directly */
-    content: url("https://raw.githubusercontent.com/Flexicon-JSE/Flex-00-Templates/main/Flexicon-Logo.jpg");
+    content: ""; /* Clears the raw image out of the content stream so it can be resized */
     display: block;
     
-    /* Perfect Center Alignment Rules */
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
+    /* Set up the image as a background instead */
+    background-image: url("https://raw.githubusercontent.com/Flexicon-JSE/Flex-00-Templates/main/Flexicon-Logo.jpg");
+    background-size: contain;     /* Forces the logo to scale perfectly inside its box */
+    background-repeat: no-repeat;
+    background-position: center;  /* Centers the logo inside the box */
     
-    /* Prevents oversized asset blowouts on standard displays */
-    width: 250px; 
-    max-width: 100%;
+    /* Force exact structural sizing */
+    width: 100%;                  /* Occupies full text width to allow true centering */
+    height: 120px;                /* Controls the vertical height of the logo area */
+    
+    /* Spacing around the element */
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-top: 0;
 }
 
 /* Flexicon text branding header
