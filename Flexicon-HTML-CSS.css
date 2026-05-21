@@ -11,7 +11,6 @@ body {
     color: #333;
 }
 
-/* Flexicon Branding Header - forced update*/
 /* Flexicon Branding Header - Replaced text with graphic logo */
 body::before {
     content: url("https://raw.githubusercontent.com/Flexicon-JSE/Flex-00-Templates/main/Flexicon-Logo.jpg");
