@@ -11,19 +11,31 @@ body {
     color: #333;
 }
 
-/* Flexicon Branding Header - Replaced text with graphic logo */
-body::before {
-    content: url("https://raw.githubusercontent.com/Flexicon-JSE/Flex-00-Templates/main/Flexicon-Logo.jpg");
-    display: block;
-    text-align: center;
-    margin-bottom: 20px;
+/* --- Flexicon Branding Header & Accents --- */
+
+body { 
+    font-family: 'Inter', sans-serif, Arial; 
+    margin: 40px; 
+    line-height: 1.6; 
+    color: #333;
+    /* This adds a true page-wide accent line across the very top edge of the document */
     border-top: 10px solid #fff200; 
     padding-top: 20px;
+}
+
+body::before {
+    /* Reference the logo graphic directly */
+    content: url("https://raw.githubusercontent.com/Flexicon-JSE/Flex-00-Templates/main/Flexicon-Logo.jpg");
+    display: block;
     
-    /* This ensures the image respects sizing boundaries if the window shrinks */
-    max-width: 300px;
+    /* Perfect Center Alignment Rules */
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 20px;
+    
+    /* Prevents oversized asset blowouts on standard displays */
+    width: 250px; 
+    max-width: 100%;
 }
 
 /* Flexicon text branding header
