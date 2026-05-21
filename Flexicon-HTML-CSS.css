@@ -36,7 +36,7 @@ body::before {
     
     /* Force exact structural sizing */
     width: 100%;                  /* Occupies full text width to allow true centering */
-    height: 120px;                /* Controls the vertical height of the logo area */
+    height: 90px;                /* Controls the vertical height of the logo area */
     
     /* Spacing around the element */
     margin-top: 0;
