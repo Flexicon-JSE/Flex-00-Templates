@@ -1,0 +1,266 @@
+/* Flexicon Style Template for Markdown Export - LITE VERSION */
+/* Removed Mermaid logic to prevent 18MB file size explosion */
+
+/* Imports for Inter, Lato, and Fira Code */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Lato:wght@400;700;900&family=Fira+Code:wght@300,400,500,600,700&display=swap');
+
+body { 
+    font-family: 'Inter', sans-serif, Arial; 
+    margin: 40px; 
+    line-height: 1.6; 
+    color: #333;
+}
+
+/* --- Flexicon Branding Header & Accents --- */
+
+body { 
+    font-family: 'Inter', sans-serif, Arial; 
+    margin: 40px; 
+    line-height: 1.6; 
+    color: #333;
+    /* This adds a true page-wide accent line across the very top edge of the document */
+    border-top: 10px solid #fff200; 
+    padding-top: 20px;
+}
+
+/* --- Flexicon Branding Header (Resized & Centered Fix) --- */
+body::before {
+    content: ""; /* Clears the raw image out of the content stream so it can be resized */
+    display: block;
+    
+    /* Set up the image as a background instead */
+    background-image: url("https://raw.githubusercontent.com/Flexicon-JSE/Flex-00-Templates/main/Flexicon-Engineering-Logo.jpg");
+    background-size: contain;     /* Forces the logo to scale perfectly inside its box */
+    background-repeat: no-repeat;
+    background-position: center;  /* Centers the logo inside the box */
+    
+    /* Force exact structural sizing */
+    width: 100%;                  /* Occupies full text width to allow true centering */
+    height: 90px;                /* Controls the vertical height of the logo area */
+    
+    /* Spacing around the element */
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-top: 0;
+}
+
+/* Flexicon text branding header
+body::before {
+    content: "Flexicon";
+    display: block;
+    font-family: 'Lato', sans-serif, Arial;
+    color: #ed174f;
+    font-size: 2.25em;
+    font-weight: 900;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    border-top: 10px solid #fff200; 
+    padding-top: 10px;
+}
+*/
+
+/* Headings */
+h1, h2, h3 { 
+    color: #004990; 
+}
+
+h1 { 
+    font-family: 'Inter', sans-serif, Arial; 
+    font-weight: 700; 
+    color: #004990; 
+    border-bottom: 2px solid #004990 !important; 
+    padding-bottom: 10px; 
+    text-align: center; 
+}
+
+h2 { 
+    font-family: 'Inter', sans-serif, Arial; 
+    font-weight: 700; 
+    color: #004990;
+    border-bottom: 2px solid #004990 !important; 
+    padding-bottom: 20px; 
+    margin-top: 20px;    
+    margin-bottom: 20px;
+}
+
+/* --- Blockquotes (Default Formatting for ">" symbol) --- */
+blockquote {
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-left: 8px solid #ffc562 !important; 
+    background-color: #fff2dc !important;
+    color: #000000 !important;
+    border-radius: 0 4px 4px 0;
+}
+
+blockquote p {
+    margin: 0;
+}
+
+/* --- Fenced Code Blocks (Python/Scripts) --- */
+pre {
+    font-family: 'Fira Code', monospace !important;
+    font-weight: 500 !important;
+    background-color: #fff2dc !important;
+    color: #000000 !important;
+    padding: 15px !important;
+    padding-left: 1em;
+    text-indent: -1em;
+    border-radius: 0 4px 4px 0 !important;
+    border: 1px solid #ddd !important;
+    border-left: 8px solid #ffc562 !important; 
+    overflow-x: auto;
+    margin: 5px 0 !important;
+    /* Added Word Wrap Logic */
+    white-space: pre-wrap !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+}
+
+/* --- Inline Code (Backticks) --- */
+code {
+    font-family: 'Fira Code', monospace !important;
+    font-weight: 500 !important;
+    font-size: 1em !important; 
+    background-color: #fff2dc !important;
+    color: #000000 !important;
+    padding: 2px 4px;
+    border-radius: 3px;
+    border: 1px solid #ddd !important;
+    /* Added Word Wrap Logic */
+    white-space: pre-wrap !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+}
+
+/* --- GFM Markdown Alerts --- */
+.markdown-alert {
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-left: 8px solid;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+}
+
+.markdown-alert-title {
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    font-family: Inter, sans-serif;
+}
+
+/* Note - Safety Blue (General Information) */
+.markdown-alert-note {
+    border-left-color: #002664 !important; /* ANSI Safety Blue */
+    background-color: #e3f2fd !important;
+    color: #002664 !important;
+}
+
+/* Tip - Professional Green (Best Practice) */
+.markdown-alert-tip {
+    border-left-color: #1b5e20 !important; /* Darker Green Border */
+    background-color: #e8f5e9 !important; /* Lighter Green Background */
+    color: #1b5e20 !important;
+}
+
+/* Important - Visual Purple (Critical Technical Info) */
+.markdown-alert-important {
+    border-left-color: #4a148c !important; /* Darker Purple Border */
+    background-color: #f3e5f5 !important; /* Lighter Purple Background */
+    color: #4a148c !important;
+}
+
+/* Warning - Safety Orange (Moderate Hazard) */
+.markdown-alert-warning {
+    border-left-color: #FF7900 !important; /* ANSI Safety Orange */
+    background-color: #ffe4cc !important;
+    color: #b35500 !important;
+}
+
+/* Caution - Safety Red (High Hazard / Danger) */
+.markdown-alert-caution {
+    border-left-color: #B71C1C !important; /* ANSI Safety Red */
+    background-color: #ffebee !important;
+    color: #B71C1C !important;
+}
+
+/* Lists and Spacing */
+ul {
+    margin-top: -5px !important; 
+    margin-bottom: 10px; 
+    padding-left: 20px !important; 
+}
+
+ul li {
+    list-style-type: disc !important;
+    padding-left: 5px !important; 
+}
+
+/* Horizontal Rule */
+hr {
+    border: none; 
+    height: 1.5px; 
+    background-color: #004990; 
+    margin: 16px 0 20px 0;
+}
+
+/* Status Badges */
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 0.75em;
+    font-weight: 900;
+    font-family: Inter, sans-serif;
+    text-transform: uppercase;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.draft { background-color: #fff200; color: #333; border: 1px solid #333; }
+.approved { background-color: #004990; color: #fff; }
+.confidential { background-color: #fad1db; color: #333; border: 1px solid #333; }
+
+/* --- Tables (The "Cramped" Fix) --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.95em;
+    font-family: Inter, sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+    padding: 12px 15px; /* This adds the necessary breathing room */
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+}
+
+th {
+    background-color: #004990; /* Flexicon Blue */
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 1px;
+}
+
+tr:nth-child(odd) {
+    background-color: #e6edf4; /* Subtle zebra striping for readability */
+}
+
+tr:nth-child(even) {
+    background-color: #ccdbe9; /* Subtle zebra striping for readability */
+}
+
+/*tr:last-of-type {
+    border-bottom: 2px solid #004990;
+}*/
+
+tr:hover {
+    background-color: #fff2dc; /* Highlights the row for easier tracking */
+}
