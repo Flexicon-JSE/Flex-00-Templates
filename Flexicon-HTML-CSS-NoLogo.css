@@ -228,5 +228,5 @@ tr:nth-child(even) {
 }*/
 
 tr:hover {
-    background-color: #fff2dc; /* Highlights the row for easier tracking */
+    background-color: #fffbb3; /* Highlights the row for easier tracking */
 }
