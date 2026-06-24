@@ -236,6 +236,25 @@ tr:hover {
     background-color: #fffbb3; /* Highlights the row for easier tracking */
 }
 
+/* --- Minimalist Open Formula Bordering --- */
+.katex-display, .MathJax_Display {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.15em !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 12px 0 !important;
+    margin: 30px auto !important;
+    width: 80%; /* Constrains wide equations centrally */
+    border-top: 1px dashed #ccdbe9 !important; /* Cohesive with table striping */
+    border-bottom: 1px dashed #ccdbe9 !important;
+    text-align: center;
+}
+
+/* Ensure inner KaTeX/MathJax elements inherit the clean text styling */
+.katex, .katex * {
+    font-family: 'Inter', sans-serif !important;
+}
+
 
 /* ==========================================================================
    MERMAID FLOWCHART STYLING - V4 (Engineering Professional Upgrade)
